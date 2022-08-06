@@ -142,3 +142,29 @@ func IntSliceToCSV(a []int, sep string) string {
 	}
 	return strings.Join(b, sep)
 }
+
+//Int64SliceToCSV convert slice of int64 to comma separated string
+func Int64SliceToCSV(a []int64, sep string) string {
+	if len(a) == 0 {
+		return ""
+	}
+
+	b := make([]string, len(a))
+	for i, v := range a {
+		b[i] = strconv.FormatInt(v, 10)
+	}
+	return strings.Join(b, sep)
+}
+
+//sliceToStringFloat convert slice to float64 to comma separated string
+func FloatsliceToCSV(a []float64, sep string) string {
+	if len(a) == 0 {
+		return ""
+	}
+
+	b := make([]string, len(a))
+	for i, v := range a {
+		b[i] = strconv.FormatFloat(v, 'f', 6, 64)
+	}
+	return strings.Join(b, sep)
+}
